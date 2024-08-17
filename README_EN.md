@@ -84,12 +84,12 @@ Enter the Clang version to use.
 
 | Clang Version | Corresponding Android Version | AOSP-Clang Version |
 | ------------- | ----------------------------- | ------------------ |
-| 12.0.5 | Android S | r416183b |
-| 14.0.6 | Android T | r450784d |
-| 14.0.7 |               | r450784e |
-| 15.0.1 |               | r458507 |
-| 17.0.1 |               | r487747b |
-| 17.0.2 | Android U | r487747c |
+| 12.0.5        | Android S                     | r416183b           |
+| 14.0.6        | Android T                     | r450784d           |
+| 14.0.7        |                               | r450784e           |
+| 15.0.1        |                               | r458507            |
+| 17.0.1        |                               | r487747b           |
+| 17.0.2        | Android U                     | r487747c           |
 
 Generally, Clang12 can compile most of the 4.14 and above kernels. My MI 6X 4.19 uses r450784d.
 
@@ -119,10 +119,12 @@ Enable KernelSU for troubleshooting kernel failures or compiling the kernel sepa
 
 #### KernelSU Branch or Tag
 
+[KernelSU 1.0 no longer supports non-GKI kernels](https://github.com/tiann/KernelSU/issues/1705). The last supported version is [v0.9.5](https://github.com/tiann/KernelSU/tree/v0.9.5), please make sure to use the correct branch.
+
 Select the branch or tag of KernelSU:
 
-- main branch (development version): `KERNELSU_TAG=main`
-- Latest TAG (stable version): `KERNELSU_TAG=`
+- ~~main branch (development version): `KERNELSU_TAG=main`~~
+- Latest TAG (stable version): `KERNELSU_TAG=v0.9.5`
 - Specify the TAG (such as `v0.5.2`): `KERNELSU_TAG=v0.5.2`
 
 #### KernelSU Manager signature size and hash
@@ -149,6 +151,10 @@ If kprobe does not work in your kernel (may be an upstream or kernel bug below 4
 
 Automatically modify kernel source code to support KernelSU  
 See also: [Intergrate for non-GKI devices](https://kernelsu.org/guide/how-to-integrate-for-non-gki.html#manually-modify-the-kernel-source)
+
+### Remove unused packages
+
+To clean unnecessary packages and free up more disk space.If you need these packages, please disable this option.
 
 ### AnyKernel3
 
